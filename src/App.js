@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Home from './Home';
+import Navbar from './Navbar';
+
 
 function App() {
+  // const link = "https://www.google.com";
+  // const title = "welcome to the new blog";
+  // const likes = 50;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <div className="content">
+      
+    <Navbar></Navbar>
+    <Home />
+      {/* <h1> {title} </h1>
+      <p>Liked {likes} times </p> */}
+
+      {/* <p> {person} </p> */}
+      {/* <p> {10} </p>
+      <p> {"helllo world"} </p>
+      <p> {Math.random() *1000  } </p>
+      <a href={link}>Google </a> */}
+
+     </div>
     </div>
   );
 }
