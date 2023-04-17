@@ -1,6 +1,8 @@
-
+import BlogDetails from './BlogDetails';
+import Create from './Create';
 import Home from './Home';
 import Navbar from './Navbar';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 function App() {
@@ -8,22 +10,27 @@ function App() {
   // const title = "welcome to the new blog";
   // const likes = 50;
   return (
-    <div className="App">
-     <div className="content">
-      
-    <Navbar></Navbar>
-    <Home />
-      {/* <h1> {title} </h1>
-      <p>Liked {likes} times </p> */}
 
-      {/* <p> {person} </p> */}
-      {/* <p> {10} </p>
-      <p> {"helllo world"} </p>
-      <p> {Math.random() *1000  } </p>
-      <a href={link}>Google </a> */}
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
 
-     </div>
-    </div>
+            <Route path="/create">
+              <Create />
+            </Route>
+
+            <Route path="/blogs/:id">
+              <BlogDetails />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
   );
 }
 
